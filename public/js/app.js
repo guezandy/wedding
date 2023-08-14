@@ -28,7 +28,7 @@ var colorPicker = (function() {
 })();
 
 var dataPicker = (function() {
-  var cssClass = ["one", "two", "three"];
+  var cssClass = ["one", "two", "three", "more-deets"];
   var index = 0;
   function next() {
     index = index++ < cssClass.length-1 ? index : 0;
@@ -188,6 +188,10 @@ var resizeCanvas = function() {
   c.width = cW * devicePixelRatio;
   c.height = cH * devicePixelRatio;
   ctx.scale(devicePixelRatio, devicePixelRatio);
+
+  const content = document.querySelector('.content');
+  content.style.height = c.height + 'px';
+  content.style.width = c.width + 'px';
 };
 
 (function init() {

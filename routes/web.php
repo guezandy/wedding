@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RsvpController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::post('/rsvp-entry', [RsvpController::class, 'entry'])->name('rsvp-entry.post');
+Route::get('/rsvp-confirm/{id}', [RsvpController::class, 'confirmName'])->name('rsvp-confirm.post');
+
+Route::post('/rsvp', [RsvpController::class, 'confirmRsvp']);
